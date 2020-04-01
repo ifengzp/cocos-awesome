@@ -2,6 +2,10 @@
   "collision-matrix": [
     [
       true
+    ],
+    [
+      false,
+      false
     ]
   ],
   "excluded-modules": [
@@ -10,7 +14,8 @@
     "3D Particle"
   ],
   "group-list": [
-    "default"
+    "default",
+    "mirror_camera"
   ],
   "design-resolution-width": 1334,
   "design-resolution-height": 750,
@@ -34,6 +39,5 @@
     "live": {
       "enable": false
     }
-  },
-  "start-scene": "current"
+  }
 }
