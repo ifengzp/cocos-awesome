@@ -797,7 +797,9 @@
     "mirrorCameraNode": {
       "__id__": 14
     },
-    "tempCameraSpriteNode": null,
+    "tempCameraSpriteNode": {
+      "__id__": 10
+    },
     "_id": "19Lhxf6jxHWZ4TYr8xS5s4"
   }
 ]

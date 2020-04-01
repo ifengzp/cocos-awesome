@@ -1,3 +1,4 @@
+import BackHomeBtn from "./BackHomeBtn";
 const {ccclass, property} = cc._decorator;
 enum sceneList {
   "Infinite_bg_scroll" = "背景无限滚动",
@@ -23,6 +24,7 @@ export default class Home extends cc.Component {
 
       scrollItem.getChildByName("label").getComponent(cc.Label).string = sceneList[key];
 		  scrollItem.on(cc.Node.EventType.TOUCH_END, () => {
+        BackHomeBtn.instance.toggleActive(true);
         cc.tween(scrollItem)
           .to(0.1, { scale: 1.05 })
           .to(0.1, { scale: 1 })

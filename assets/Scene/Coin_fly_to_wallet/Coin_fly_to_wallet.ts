@@ -90,8 +90,4 @@ export default class Coin_fly_to_wallet extends cc.Component {
     }
     return points;
   }
-
-  backToHome() {
-    cc.director.loadScene('Home');
-  }
 }

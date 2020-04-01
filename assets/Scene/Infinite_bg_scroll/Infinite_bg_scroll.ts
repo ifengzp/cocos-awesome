@@ -24,8 +24,4 @@ export default class Infinite_bg_scroll extends cc.Component {
     this.bg1.x -= temp;
     this.bg2.x -= temp;
   }
-
-  backToHome() {
-    cc.director.loadScene('Home');
-  }
 }

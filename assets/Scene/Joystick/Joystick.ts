@@ -16,10 +16,6 @@ export default class Roller extends cc.Component {
     this.initTouchEvent();
   }
 
-  backToHome() {
-    cc.director.loadScene("Home");
-  }
-
   initTouchEvent() {
     this.node.on(cc.Node.EventType.TOUCH_START, this.touchStartEvent, this);
     this.node.on(cc.Node.EventType.TOUCH_MOVE, this.touchMoveEvent, this);
