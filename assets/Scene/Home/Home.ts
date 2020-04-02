@@ -18,13 +18,34 @@ export default class Home extends cc.Component {
     this.initScrollItem();
   }
 
+  start() {
+    this.judgeJump();
+  }
+
+  judgeJump() {
+    const sceneName = this.getQueryStringByName("sceneName");
+    const isSameVisit = window["isSameVisit"];
+
+    if (!sceneName) return;
+    if (isSameVisit) return;
+
+    if (sceneList[sceneName]) {
+      window["isSameVisit"] = true;
+      this.loadScene(sceneName);
+    }
+  }
+
+  getQueryStringByName(name) {
+    let result = window.location.search.match(new RegExp("[\?\&]" + name+ "=([^\&]+)","i"));
+    return result == null || result.length < 1 ? "" : result[1];
+  }
+
   initScrollItem() {
     for (let key in sceneList) {
       let scrollItem = cc.instantiate(this.scrollItemPrefab);
 
       scrollItem.getChildByName("label").getComponent(cc.Label).string = sceneList[key];
 		  scrollItem.on(cc.Node.EventType.TOUCH_END, () => {
-        BackHomeBtn.instance.toggleActive(true);
         cc.tween(scrollItem)
           .to(0.1, { scale: 1.05 })
           .to(0.1, { scale: 1 })
@@ -38,5 +59,6 @@ export default class Home extends cc.Component {
 
   loadScene(key) {
     cc.director.loadScene(key);
+    BackHomeBtn.instance.toggleActive(true);
   }
 }

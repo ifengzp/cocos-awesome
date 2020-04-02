@@ -4,7 +4,7 @@ const { ccclass, property } = cc._decorator;
 export default class BackHomeBtn extends cc.Component {
   static instance: BackHomeBtn = null;
 
-  start() {
+  onLoad() {
     cc.game.addPersistRootNode(this.node);
     BackHomeBtn.instance = this;
     this.toggleActive(false);
