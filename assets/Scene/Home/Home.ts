@@ -5,7 +5,8 @@ enum sceneList {
   'Infinite_bg_scroll' = '背景无限滚动',
   'Joystick' = '遥控杆',
   'Coin_fly_to_wallet' = '金币落袋',
-  'Magnifying_mirror' = '放大镜'
+  'Magnifying_mirror' = '放大镜',
+  'Change_clothes' = '换装'
 }
 
 @ccclass
