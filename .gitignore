@@ -65,3 +65,5 @@ quick_gen_project_*_autogen.sh.meta
 #//////////////////////////
 
 .vscode/
+
+packages/pngquant/
