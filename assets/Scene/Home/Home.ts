@@ -4,9 +4,10 @@ const LOAD_SCENE_MIN_SEC: number = 1.2;
 enum sceneList {
   'Infinite_bg_scroll' = '背景无限滚动',
   'Joystick' = '遥控杆',
-  'Coin_fly_to_wallet' = '金币落袋',
-  'Magnifying_mirror' = '放大镜',
-  'Change_clothes' = '换装'
+  'Coin_fly_to_wallet' = '金币落袋效果',
+  'Magnifying_mirror' = '局部缩放效果',
+  'Change_clothes' = '换装',
+  'Typer' = '打字机效果'
 }
 
 @ccclass
