@@ -7,7 +7,8 @@ enum sceneList {
   'Coin_fly_to_wallet' = '金币落袋效果',
   'Magnifying_mirror' = '局部缩放效果',
   'Change_clothes' = '换装',
-  'Typer' = '打字机效果'
+  'Typer' = '打字机效果',
+  'Scratch_ticket' = '刮刮卡实现'
 }
 
 @ccclass
