@@ -8,7 +8,8 @@ enum sceneList {
   'Magnifying_mirror' = '局部缩放效果',
   'Change_clothes' = '换装',
   'Typer' = '打字机效果',
-  'Scratch_ticket' = '刮刮卡实现'
+  'Scratch_ticket' = '刮刮卡实现',
+  'Moving_ghost' = '移动残影效果'
 }
 
 @ccclass

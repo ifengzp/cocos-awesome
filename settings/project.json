@@ -6,6 +6,11 @@
     [
       false,
       false
+    ],
+    [
+      false,
+      false,
+      false
     ]
   ],
   "excluded-modules": [
@@ -15,7 +20,8 @@
   ],
   "group-list": [
     "default",
-    "mirror_camera"
+    "mirror_camera",
+    "moving_ghost"
   ],
   "design-resolution-width": 1334,
   "design-resolution-height": 750,
@@ -39,6 +45,5 @@
     "live": {
       "enable": false
     }
-  },
-  "start-scene": "current"
+  }
 }
