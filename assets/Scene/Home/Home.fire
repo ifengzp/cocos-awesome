@@ -189,7 +189,7 @@
       "array": [
         0,
         0,
-        443.4050067376326,
+        452.93128617926146,
         0,
         0,
         0,
@@ -629,7 +629,7 @@
     },
     "_touching": false,
     "_opacity": 255,
-    "enableAutoHide": true,
+    "enableAutoHide": false,
     "autoHideTime": 1,
     "_N$handle": {
       "__id__": 11
