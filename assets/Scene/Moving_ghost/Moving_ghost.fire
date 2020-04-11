@@ -192,7 +192,7 @@
       "array": [
         0,
         0,
-        443.4050067376326,
+        452.93128617926146,
         0,
         0,
         0,
@@ -377,7 +377,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "ghost_canvas_5",
+    "_name": "ghost_canvas_1",
     "_objFlags": 0,
     "_parent": {
       "__id__": 2
@@ -390,7 +390,7 @@
       }
     ],
     "_prefab": null,
-    "_opacity": 155,
+    "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
       "r": 255,
@@ -420,7 +420,7 @@
         0,
         1,
         1,
-        -1,
+        1,
         1
       ]
     },
@@ -435,7 +435,7 @@
     "_is3DNode": false,
     "_groupIndex": 0,
     "groupIndex": 0,
-    "_id": "cbQv1dxoBLFpagqOzLQ6Y7"
+    "_id": "03Z6yHCI9JE5jrLbUglArF"
   },
   {
     "__type__": "cc.Sprite",
@@ -465,11 +465,11 @@
     "_fillRange": 0,
     "_isTrimmedMode": true,
     "_atlas": null,
-    "_id": "16Rsd34XhKE7KNxmZscowT"
+    "_id": "19WVPVXdtNb68goEuUt+cU"
   },
   {
     "__type__": "cc.Node",
-    "_name": "ghost_canvas_4",
+    "_name": "ghost_canvas_2",
     "_objFlags": 0,
     "_parent": {
       "__id__": 2
@@ -482,7 +482,7 @@
       }
     ],
     "_prefab": null,
-    "_opacity": 175,
+    "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
       "r": 255,
@@ -512,7 +512,7 @@
         0,
         1,
         1,
-        -1,
+        1,
         1
       ]
     },
@@ -527,7 +527,7 @@
     "_is3DNode": false,
     "_groupIndex": 0,
     "groupIndex": 0,
-    "_id": "f5zoKTEkJGu6AIoeG2eA+A"
+    "_id": "914poY0+hER43PYo1zsIXT"
   },
   {
     "__type__": "cc.Sprite",
@@ -557,7 +557,7 @@
     "_fillRange": 0,
     "_isTrimmedMode": true,
     "_atlas": null,
-    "_id": "08Gw+O0axH0JekJRpCJVLH"
+    "_id": "0cqpRO76pNcoijkn8RrQDq"
   },
   {
     "__type__": "cc.Node",
@@ -574,7 +574,7 @@
       }
     ],
     "_prefab": null,
-    "_opacity": 195,
+    "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
       "r": 255,
@@ -604,7 +604,7 @@
         0,
         1,
         1,
-        -1,
+        1,
         1
       ]
     },
@@ -653,7 +653,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "ghost_canvas_2",
+    "_name": "ghost_canvas_4",
     "_objFlags": 0,
     "_parent": {
       "__id__": 2
@@ -666,7 +666,7 @@
       }
     ],
     "_prefab": null,
-    "_opacity": 215,
+    "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
       "r": 255,
@@ -696,7 +696,7 @@
         0,
         1,
         1,
-        -1,
+        1,
         1
       ]
     },
@@ -711,7 +711,7 @@
     "_is3DNode": false,
     "_groupIndex": 0,
     "groupIndex": 0,
-    "_id": "914poY0+hER43PYo1zsIXT"
+    "_id": "f5zoKTEkJGu6AIoeG2eA+A"
   },
   {
     "__type__": "cc.Sprite",
@@ -741,11 +741,11 @@
     "_fillRange": 0,
     "_isTrimmedMode": true,
     "_atlas": null,
-    "_id": "0cqpRO76pNcoijkn8RrQDq"
+    "_id": "08Gw+O0axH0JekJRpCJVLH"
   },
   {
     "__type__": "cc.Node",
-    "_name": "ghost_canvas_1",
+    "_name": "ghost_canvas_5",
     "_objFlags": 0,
     "_parent": {
       "__id__": 2
@@ -758,7 +758,7 @@
       }
     ],
     "_prefab": null,
-    "_opacity": 235,
+    "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
       "r": 255,
@@ -788,7 +788,7 @@
         0,
         1,
         1,
-        -1,
+        1,
         1
       ]
     },
@@ -803,7 +803,7 @@
     "_is3DNode": false,
     "_groupIndex": 0,
     "groupIndex": 0,
-    "_id": "03Z6yHCI9JE5jrLbUglArF"
+    "_id": "cbQv1dxoBLFpagqOzLQ6Y7"
   },
   {
     "__type__": "cc.Sprite",
@@ -833,7 +833,7 @@
     "_fillRange": 0,
     "_isTrimmedMode": true,
     "_atlas": null,
-    "_id": "19WVPVXdtNb68goEuUt+cU"
+    "_id": "16Rsd34XhKE7KNxmZscowT"
   },
   {
     "__type__": "cc.Node",
@@ -940,13 +940,13 @@
       "array": [
         0,
         0,
-        443.4050067376326,
+        452.93128617926146,
         0,
         0,
         0,
         1,
         1,
-        1,
+        -1,
         1
       ]
     },
@@ -1085,19 +1085,19 @@
     "_enabled": true,
     "ghostCanvasList": [
       {
-        "__id__": 17
-      },
-      {
-        "__id__": 15
-      },
-      {
-        "__id__": 13
+        "__id__": 9
       },
       {
         "__id__": 11
       },
       {
-        "__id__": 9
+        "__id__": 13
+      },
+      {
+        "__id__": 15
+      },
+      {
+        "__id__": 17
       }
     ],
     "role": {

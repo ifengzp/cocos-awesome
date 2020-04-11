@@ -10,13 +10,19 @@ export default class Moving_ghost extends cc.Component {
   roleCamera: cc.Camera = null;
 
   onLoad() {
+    const roleZindex = 10;
+    this.role.zIndex = roleZindex;
+
     const texture = new cc.RenderTexture();
     texture.initWithSize(this.node.width, this.node.height);
     const spriteFrame = new cc.SpriteFrame();
     spriteFrame.setTexture(texture);
     this.roleCamera.targetTexture = texture;
-    this.ghostCanvasList.forEach((sprite) => {
-      sprite.spriteFrame = spriteFrame;
+    this.ghostCanvasList.forEach((ghost, idx) => {
+      ghost.node.scaleY = -1;
+      ghost.node.zIndex = roleZindex - idx;
+      ghost.node.opacity = 100 - idx * 15;
+      ghost.spriteFrame = spriteFrame;
     });
 
     this.schedule(this.ghostFollow, 0.1, cc.macro.REPEAT_FOREVER);
@@ -33,11 +39,11 @@ export default class Moving_ghost extends cc.Component {
   }
 
   ghostFollow() {
-    this.ghostCanvasList.forEach((sprite, i) => {
-      const dis = (sprite.node.position as any).sub(this.role.position).mag();
-      if (dis < 0.5) return; // 给个误差范围，涉及到浮点数计算，dis的结果不可能精确为0，小于0.5就可以认为是静止了
-      sprite.node.stopAllActions();
-      sprite.node.runAction(cc.moveTo(i * 0.04 + 0.02, this.role.x, this.role.y));
+    this.ghostCanvasList.forEach((ghost, i) => {
+      const dis = (ghost.node.position as any).sub(this.role.position).mag();
+      if (dis < 0.5) return; // 给个误差范围，涉及到浮点数，dis的计算不可能精准，小于0.5就可以认为是静止了
+      ghost.node.stopAllActions();
+      ghost.node.runAction(cc.moveTo(i * 0.04 + 0.02, this.role.x, this.role.y));
     });
   }
 }
