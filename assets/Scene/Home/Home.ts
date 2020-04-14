@@ -10,7 +10,8 @@ enum sceneList {
   'Change_clothes' = '换装',
   'Typer' = '打字机效果',
   'Moving_ghost' = '移动残影效果',
-  'Screen_vibrating' = '震屏效果+动画恢复第一帧'
+  'Screen_vibrating' = '震屏效果+动画恢复第一帧',
+  'Bullet_Tracking' = '子弹跟踪效果'
 }
 
 @ccclass
