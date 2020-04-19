@@ -1,0 +1,20 @@
+{
+  "__type__": "cc.Material",
+  "_name": "dissolve_color",
+  "_objFlags": 0,
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "8f11426c-8971-4082-b9b9-56ab5fb4bc9a"
+  },
+  "_techniqueIndex": 0,
+  "_techniqueData": {
+    "0": {
+      "defines": {
+        "USE_TEXTURE": true
+      },
+      "props": {
+        "fade_pct": 0
+      }
+    }
+  }
+}
