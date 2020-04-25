@@ -1,4 +1,5 @@
 我是异名，你的阅读是我的动力，其他文章链接：
+- [富文本打字机效果](https://mp.weixin.qq.com/s/WlVBzSgCNTNPD2bxXda-mg)
 - [子弹跟踪效果](https://mp.weixin.qq.com/s/2egrmJC1AgRXNWuGOIhbXg)
 - [微信小游戏超出4M之后](https://mp.weixin.qq.com/s/l8MDHMnVl8eVl8U6krBeDw)
 - [残影移动](https://mp.weixin.qq.com/s/fVSj6nyzp4gEfg-CrAeNSg)

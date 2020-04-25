@@ -2,7 +2,7 @@
 
 物体的淡入淡出是游戏当中很常见的一种状态切换效果，但是有时候我们希望`fade`切换的时候，物体能够能更有色彩层次感或者其他一些特殊的中间状态，这个时候就得自己去写着色器，这种区别于单纯的淡入和淡出的效果可以形象地叫做溶解。
 
-![demo](./resources/demo.gif)
+![demo](http://cdn.blog.ifengzp.com/cocos-awesome/Dissolve_color/resources/demo.gif)
 
 # 实现思路
 
