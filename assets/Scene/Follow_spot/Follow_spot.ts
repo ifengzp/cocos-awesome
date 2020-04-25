@@ -5,19 +5,19 @@ export default class Follow_spot extends cc.Component {
   @property(cc.Node)
   bg: cc.Node = null;
   material: cc.Material = null;
+  center: number[] = [0.1, 0.5];
 
   onLoad() {
     this.material = this.bg.getComponent(cc.Sprite).getMaterial(0);
     this.material.setProperty('wh_ratio', this.bg.width / this.bg.height);
-    console.log(this.bg.width / this.bg.height)
+    this.material.setProperty('center', this.center);
 
-
-    this.bg.on(cc.Node.EventType.TOUCH_START, this.touchEvent, this);
-    this.bg.on(cc.Node.EventType.TOUCH_MOVE, this.touchEvent, this);
+    this.bg.on(cc.Node.EventType.TOUCH_MOVE, this.touchMoveEvent, this);
   }
 
-  touchEvent(evt: cc.Event.EventTouch) {
-    let pos = evt.getLocation();
-    this.material.setProperty('center', [pos.x / this.bg.width, (this.bg.height - pos.y) / this.bg.height]);
+  touchMoveEvent(evt: cc.Event.EventTouch) {
+    this.center[0] += evt.getDeltaX() / this.bg.width;
+    this.center[1] -= evt.getDeltaY() / this.bg.height;
+    this.material.setProperty('center', this.center);
   }
 }
