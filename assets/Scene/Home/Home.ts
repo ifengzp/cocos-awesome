@@ -2,11 +2,11 @@ import BackHomeBtn from './BackHomeBtn';
 const { ccclass, property } = cc._decorator;
 const LOAD_SCENE_MIN_SEC: number = 1.2;
 enum sceneList {
-  'Dissolve_color' = 'shader 溶解效果',
+  'Dissolve_color' = '溶解效果（shader）',
   'Scratch_ticket' = '刮刮卡实现',
   'Coin_fly_to_wallet' = '金币落袋效果',
-  'Magnifying_mirror' = '局部缩放效果',
-  'Follow_spot' = 'shader 追光效果',
+  'Magnifying_mirror' = '放大镜效果',
+  'Follow_spot' = '追光效果（shader）',
   'Typer' = '打字机效果',
   'Bullet_Tracking' = '子弹跟踪效果',
   'Moving_ghost' = '移动残影效果',
