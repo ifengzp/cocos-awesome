@@ -1,4 +1,6 @@
 我是异名，你的阅读是我的动力，其他文章链接：
+- [追光效果(shader)](https://mp.weixin.qq.com/s/YFvMAuMqageplRCp9YYgpQ)
+- [溶解效果(shader)](https://mp.weixin.qq.com/s/8uu3gyWWMt0gf32XAinl-g)
 - [富文本打字机效果](https://mp.weixin.qq.com/s/WlVBzSgCNTNPD2bxXda-mg)
 - [子弹跟踪效果](https://mp.weixin.qq.com/s/2egrmJC1AgRXNWuGOIhbXg)
 - [微信小游戏超出4M之后](https://mp.weixin.qq.com/s/l8MDHMnVl8eVl8U6krBeDw)

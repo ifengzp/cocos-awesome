@@ -10,6 +10,7 @@ enum sceneList {
   'Typer' = '打字机效果',
   'Bullet_Tracking' = '子弹跟踪效果',
   'Moving_ghost' = '移动残影效果',
+  'Circle_avatar' = '圆形头像（shader）',
   'Infinite_bg_scroll' = '背景无限滚动',
   'Change_clothes' = '换装',
   'Screen_vibrating' = '震屏效果+动画恢复第一帧',
