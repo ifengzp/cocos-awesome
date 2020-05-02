@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.Material",
+  "_name": "Specular_gloss",
+  "_objFlags": 0,
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "807726aa-682d-4fdc-9ed9-4ee789999ce3"
+  },
+  "_techniqueIndex": 0,
+  "_techniqueData": {
+    "0": {
+      "defines": {
+        "USE_TEXTURE": true
+      },
+      "props": {
+        "strength": 1.3,
+        "width": 0.2
+      }
+    }
+  }
+}

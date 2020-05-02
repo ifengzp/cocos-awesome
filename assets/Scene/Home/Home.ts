@@ -2,6 +2,7 @@ import BackHomeBtn from './BackHomeBtn';
 const { ccclass, property } = cc._decorator;
 const LOAD_SCENE_MIN_SEC: number = 1.2;
 enum sceneList {
+  'Specular_gloss' = '镜面光泽效果（shader）',
   'Dissolve_color' = '溶解效果（shader）',
   'Scratch_ticket' = '刮刮卡实现',
   'Coin_fly_to_wallet' = '金币落袋效果',
