@@ -2,10 +2,10 @@
 cocos是一款挺棒的游戏引擎，我在这个仓库实现一些游戏当中比较使用的功能模块，对应的一个功能一个场景，用的引擎版本是`v2.3.0`，实现的思路在`doc`目录中，当然关注异名的公众号能够更快速获取该仓库的更新信息。
 
 # 关注公众号查看实现思路
-![教程二维码](http://cdn.blog.ifengzp.com/cocos-awesome/wxgzh.png)
+![公众号《异名程序员》](./doc/wxgzh.png)
 
 # 预览二维码
-![预览二维码](http://cdn.blog.ifengzp.com/cocos-awesome/demo.png)
+![预览二维码](./doc/demo.png)
 
 # 目前已实现效果
 
