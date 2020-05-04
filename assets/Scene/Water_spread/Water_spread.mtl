@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.Material",
+  "_name": "Water_spread",
+  "_objFlags": 0,
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "7b534a3f-8819-43a5-87dc-5d55a6869117"
+  },
+  "_techniqueIndex": 0,
+  "_techniqueData": {
+    "0": {
+      "props": {
+        "wave_radius": 0.2,
+        "wave_offset": 2
+      },
+      "defines": {
+        "USE_TEXTURE": true
+      }
+    }
+  }
+}

@@ -1,0 +1,93 @@
+// Copyright (c) 2017-2018 Xiamen Yaji Software Co., Ltd.
+
+CCEffect %{
+  techniques:
+  - passes:
+    - vert: vs
+      frag: fs
+      blendState:
+        targets:
+        - blend: true
+      rasterizerState:
+        cullMode: none
+      properties:
+        texture: { value: white }
+        canvas_size: { value: [ 667.0, 375.0 ] }
+        center: { value: [ 0.5, 0.5 ] }
+        wave_radius: {  value: 0.18 }
+        wave_offset: { value: 2.0 }
+}%
+
+
+CCProgram vs %{
+  precision highp float;
+
+  #include <cc-global>
+  #include <cc-local>
+
+  in vec3 a_position;
+  in vec4 a_color;
+  out vec4 v_color;
+
+  #if USE_TEXTURE
+  in vec2 a_uv0;
+  out vec2 v_uv0;
+  #endif
+
+  void main () {
+    vec4 pos = vec4(a_position, 1);
+
+    #if CC_USE_MODEL
+    pos = cc_matViewProj * cc_matWorld * pos;
+    #else
+    pos = cc_matViewProj * pos;
+    #endif
+
+    #if USE_TEXTURE
+    v_uv0 = a_uv0;
+    #endif
+
+    v_color = a_color;
+
+    gl_Position = pos;
+  }
+}%
+
+
+CCProgram fs %{
+  precision highp float;
+
+  #include <alpha-test>
+  #include <cc-global>
+
+  in vec4 v_color;
+
+  #if USE_TEXTURE
+  in vec2 v_uv0;
+  uniform sampler2D texture;
+  #endif
+
+  uniform ARGS{
+    vec2 center;
+    vec2 canvas_size;
+    float wave_radius;
+    float wave_offset;
+  };
+
+  void main() {
+		vec2 distance_vec = center - v_uv0;
+		distance_vec = distance_vec * vec2(canvas_size.x / canvas_size.y, 1.0);
+		float distance = sqrt(distance_vec.x * distance_vec.x + distance_vec.y * distance_vec.y);
+
+		// distance小于1，但是我们希望能有多个波峰波谷，所以在sin的内部乘上一个比较大的倍数
+		// sin函数的值在-1到1之间，我们希望偏移值很小，所以输出的时候需要缩小一定的倍数倍
+		float sin_factor = sin(distance * 100.0 + cc_time.x) * 0.05;
+		float discard_factor = clamp(wave_radius - abs(wave_offset - distance), 0.0, 1.0);
+
+		// 计算总的uv的偏移值
+		vec2 offset = normalize(distance_vec) * sin_factor * discard_factor;
+		vec2 uv = offset + v_uv0;
+
+    gl_FragColor = texture(texture, uv);
+  }
+}%
