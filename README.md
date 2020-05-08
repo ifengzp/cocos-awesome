@@ -26,7 +26,7 @@ cocos是一款挺棒的游戏引擎，我在这个仓库实现一些游戏当中
 ## 水波扩散（shader）
 水波扩散是一个比较好看的交互效果，特别是在某些以水为故事发生场景的游戏中，扩散的水波会让场景更加栩栩如生。
 
-![demo](.doc/Water_spread/resource/demo.gif)
+![demo](./doc/Water_spread/resource/demo.gif)
 
 ## 镜面光泽（shader）
 镜面上扫过一道光泽是UI里面很常用的一种特效，通常用来强调某个物体或者凸显物体的“稀有”价值，比如卡片中扫过一道光芒等
