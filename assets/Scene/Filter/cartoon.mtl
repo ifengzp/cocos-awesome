@@ -1,0 +1,17 @@
+{
+  "__type__": "cc.Material",
+  "_name": "cartoon",
+  "_objFlags": 0,
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "1410dc1a-1903-435f-bf7a-35e48ca53fd6"
+  },
+  "_techniqueIndex": 0,
+  "_techniqueData": {
+    "0": {
+      "defines": {
+        "USE_TEXTURE": true
+      }
+    }
+  }
+}

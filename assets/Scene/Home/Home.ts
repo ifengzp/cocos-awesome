@@ -16,7 +16,8 @@ enum sceneList {
   'Infinite_bg_scroll' = '背景无限滚动',
   'Change_clothes' = '换装',
   'Screen_vibrating' = '震屏效果+动画恢复第一帧',
-  'Joystick' = '遥控杆'
+  'Joystick' = '遥控杆',
+  'Filter' = '颜色滤镜'
 }
 
 @ccclass
