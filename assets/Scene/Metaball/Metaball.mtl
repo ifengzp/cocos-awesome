@@ -1,0 +1,20 @@
+{
+  "__type__": "cc.Material",
+  "_name": "Metaball",
+  "_objFlags": 0,
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "9334fb7c-0605-4285-8664-be8c2f8cc5b6"
+  },
+  "_techniqueIndex": 0,
+  "_techniqueData": {
+    "0": {
+      "defines": {
+        "USE_TEXTURE": true
+      },
+      "props": {
+        "u_radius": 0.05
+      }
+    }
+  }
+}
