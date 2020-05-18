@@ -101,7 +101,7 @@ CCProgram fs %{
     float ry = center.y;
     float dis = (v_uv0.x * wh_ratio - rx) * (v_uv0.x * wh_ratio - rx) + (v_uv0.y  - ry) * (v_uv0.y - ry);
 
-    o.a = smoothstep(circle, circle - blur, dis);
+    o.a = smoothstep(circle, circle - blur, dis) * o.a;
 
     gl_FragColor = o;
   }
