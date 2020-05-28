@@ -18,7 +18,8 @@ enum sceneList {
   'Change_clothes' = '换装',
   'Screen_vibrating' = '震屏效果+动画恢复第一帧',
   'Joystick' = '遥控杆',
-  'Filter' = '颜色滤镜'
+  'Filter' = '颜色滤镜',
+  'Mosaic' = '马赛克/像素风（shader）'
 }
 
 @ccclass

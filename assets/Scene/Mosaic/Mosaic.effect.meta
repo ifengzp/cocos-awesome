@@ -1,0 +1,17 @@
+{
+  "ver": "1.0.25",
+  "uuid": "a94a99c8-625f-4aef-8960-e983d429d3a6",
+  "compiledShaders": [
+    {
+      "glsl1": {
+        "vert": "\nprecision highp float;\nuniform mediump mat4 cc_matViewProj;\nattribute vec3 a_position;\nattribute vec4 a_color;\nvarying vec4 v_color;\n#if USE_TEXTURE\nattribute vec2 a_uv0;\nvarying vec2 v_uv0;\n#endif\nvoid main () {\n  vec4 pos = vec4(a_position, 1);\n  #if CC_USE_MODEL\n  pos = cc_matViewProj * cc_matWorld * pos;\n  #else\n  pos = cc_matViewProj * pos;\n  #endif\n  #if USE_TEXTURE\n  v_uv0 = a_uv0;\n  #endif\n  v_color = a_color;\n  gl_Position = pos;\n}",
+        "frag": "\nprecision highp float;\nvarying vec4 v_color;\n#if USE_TEXTURE\nvarying vec2 v_uv0;\nuniform sampler2D texture;\n#endif\n#if USE_MASAIC\nuniform float x_count;\nuniform float y_count;\nvec2 getUvMapPos() {\n  float block_w = 1.0 / x_count;\n  float block_x_idx = floor(v_uv0.x / block_w);\n  float block_h = 1.0 / y_count;\n  float block_y_idx = floor(v_uv0.y / block_h);\n  return vec2(block_w * (block_x_idx + 0.5), block_h * (block_y_idx + 0.5));\n}\n#endif\nvoid main () {\n  vec4 o = vec4(1, 1, 1, 1);\n  vec2 realPos = v_uv0;\n  #if USE_MASAIC\n    realPos = getUvMapPos();\n  #endif\n  o *= texture2D(texture, realPos);\n  o *= v_color;\n  gl_FragColor = o;\n}"
+      },
+      "glsl3": {
+        "vert": "\nprecision highp float;\nuniform CCGlobal {\n  highp   vec4 cc_time;\n  mediump vec4 cc_screenSize;\n  mediump vec4 cc_screenScale;\n  mediump vec4 cc_nativeSize;\n  highp   mat4 cc_matView;\n  mediump mat4 cc_matViewInv;\n  mediump mat4 cc_matProj;\n  mediump mat4 cc_matProjInv;\n  mediump mat4 cc_matViewProj;\n  mediump mat4 cc_matViewProjInv;\n  mediump vec4 cc_cameraPos;\n};\nin vec3 a_position;\nin vec4 a_color;\nout vec4 v_color;\n#if USE_TEXTURE\nin vec2 a_uv0;\nout vec2 v_uv0;\n#endif\nvoid main () {\n  vec4 pos = vec4(a_position, 1);\n  #if CC_USE_MODEL\n  pos = cc_matViewProj * cc_matWorld * pos;\n  #else\n  pos = cc_matViewProj * pos;\n  #endif\n  #if USE_TEXTURE\n  v_uv0 = a_uv0;\n  #endif\n  v_color = a_color;\n  gl_Position = pos;\n}",
+        "frag": "\nprecision highp float;\nin vec4 v_color;\n#if USE_TEXTURE\nin vec2 v_uv0;\nuniform sampler2D texture;\n#endif\n#if USE_MASAIC\nuniform ARGS{\n  float x_count;\n  float y_count;\n};\nvec2 getUvMapPos() {\n  float block_w = 1.0 / x_count;\n  float block_x_idx = floor(v_uv0.x / block_w);\n  float block_h = 1.0 / y_count;\n  float block_y_idx = floor(v_uv0.y / block_h);\n  return vec2(block_w * (block_x_idx + 0.5), block_h * (block_y_idx + 0.5));\n}\n#endif\nvoid main () {\n  vec4 o = vec4(1, 1, 1, 1);\n  vec2 realPos = v_uv0;\n  #if USE_MASAIC\n    realPos = getUvMapPos();\n  #endif\n  o *= texture(texture, realPos);\n  o *= v_color;\n  gl_FragColor = o;\n}"
+      }
+    }
+  ],
+  "subMetas": {}
+}
