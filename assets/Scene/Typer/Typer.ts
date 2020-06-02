@@ -48,26 +48,64 @@ export default class Typer extends cc.Component {
   }
 
   makeRichTextTyper(str: string) {
-    let charArr = str.replace(/<.+?\/?>/g, '').split('');
-    let tempStrArr = [str];
+    let delimiterCharList: any = ['✁', '✂', '✃', '✄', '✺', '✻', '✼', '❄', '❅', '❆', '❇', '❈', '❉', '❊'];
+    let regexp = /<.+?\/?>/g;
+    let matchArr = str.match(regexp);
+    let delimiterChar = delimiterCharList.find((item) => str.indexOf(item) == -1);
+    let replaceStr = str.replace(regexp, delimiterChar);
+    let tagInfoArr = [];
+    let temp = [];
+    let tagInfo: { endStr?; endtIdx?; startIdx?; startStr? } = {};
+    let num = 0;
+    for (let i = 0; i < replaceStr.length; i++) {
+      if (replaceStr[i] == delimiterChar) {
+        temp.push(i);
+        if (temp.length >= 2) {
+          tagInfo.endStr = matchArr[tagInfoArr.length * 2 + 1];
+          tagInfo.endtIdx = i - num;
+          tagInfoArr.push(tagInfo);
+          temp = [];
+          tagInfo = {};
+        } else {
+          tagInfo.startIdx = i - num;
+          tagInfo.startStr = matchArr[tagInfoArr.length * 2];
+        }
+        num += 1;
+      }
+    }
 
-    for (let i = charArr.length; i > 1; i--) {
-      let curStr = tempStrArr[charArr.length - i];
-      let lastIdx = curStr.lastIndexOf(charArr[i - 1]);
-      let prevStr = curStr.slice(0, lastIdx);
-      let nextStr = curStr.slice(lastIdx + 1, curStr.length);
-
-      tempStrArr.push(prevStr + nextStr);
+    let showCharArr = str.replace(regexp, '').split('');
+    let typerArr = [];
+    for (let i = 1; i <= showCharArr.length; i++) {
+      let temp = showCharArr.join('').slice(0, i);
+      let addLen = 0;
+      for (let j = 0; j < tagInfoArr.length; j++) {
+        let tagInfo = tagInfoArr[j];
+        let start = tagInfo.startIdx;
+        let end = tagInfo.endtIdx;
+        if (i > start && i <= end) {
+          temp = temp.slice(0, start + addLen) + tagInfo.startStr + temp.slice(start + addLen) + tagInfo.endStr;
+          addLen += tagInfo.startStr.length + tagInfo.endStr.length;
+        } else if (i > end) {
+          temp =
+            temp.slice(0, start + addLen) +
+            tagInfo.startStr +
+            temp.slice(start + addLen, end + addLen) +
+            tagInfo.endStr +
+            temp.slice(end + addLen);
+          addLen += tagInfo.startStr.length + tagInfo.endStr.length;
+        }
+      }
+      typerArr.unshift(temp);
     }
 
     this.typerTimer && clearInterval(this.typerTimer);
     this.typerTimer = setInterval(() => {
-      if (tempStrArr.length) {
-        this.richText.string = tempStrArr.pop();
+      if (typerArr.length) {
+        this.richText.string = typerArr.pop();
       } else {
         this.typerTimer && clearInterval(this.typerTimer);
       }
     }, 50);
   }
-
 }
