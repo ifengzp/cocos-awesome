@@ -19,7 +19,8 @@ enum sceneList {
   'Screen_vibrating' = '震屏效果+动画恢复第一帧',
   'Joystick' = '遥控杆',
   'Filter' = '颜色滤镜',
-  'Mosaic' = '马赛克/像素风（shader）'
+  'Mosaic' = '马赛克/像素风（shader）',
+  'Photo_gallery' = '渐变过渡的相册（shader）'
 }
 
 @ccclass
