@@ -17,6 +17,7 @@ cocos是一款挺棒的游戏引擎，我在这个仓库实现一些游戏当中
 [背景无限滚动](./doc/Infinite_bg_scroll/背景无限滚动.md)
 [遥控杆](./doc/Joystick/遥控杆.md)
 [马赛克/像素风（shader）](./doc/Mosaic/马赛克像素风.md)
+[渐变过渡的相册（shader）](./doc/Photo_gallery/渐变过渡的相册.md)
 2D换装
 震屏效果+动画恢复第一帧
 
@@ -101,9 +102,13 @@ cocos是一款挺棒的游戏引擎，我在这个仓库实现一些游戏当中
 ![demo](./doc/Infinite_bg_scroll/resourse/Infinite_bg_scroll.gif)
 
 ## 遥控杆
-这是游戏里面很常用的一个功能模块，它就像你的生活，有着走不完的路程。它的实现也很简单，要么做一个很长的背景图，然后移动相机；要么就是实现一个跑马灯，像那些轮播图什么的，大家应该都有写过。
+这是游戏里面很常用的一个功能模块，通过操控遥控杆控制物体的移动
 
 ![Joystick](./doc/Joystick/resourse/Joystick.gif)
 
+## 渐变过渡的相册（shader）
+相册是一个大家比较熟悉的场景，一般我们是实现的都是那种跑马灯式的轮播相册，这里异名给大家提供一个利用shader实现图片渐变过渡的相册思路
+
+![渐变过渡的相册](./doc/Photo_gallery/resources/demo.gif)
 
 
