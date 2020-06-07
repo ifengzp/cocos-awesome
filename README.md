@@ -1,5 +1,10 @@
 # cocos-awesome
-cocos是一款挺棒的游戏引擎，我在这个仓库实现一些游戏当中比较使用的功能模块，对应的一个功能一个场景，用的引擎版本是`v2.3.0`，实现的思路在`doc`目录中。
+
+![](https://img.shields.io/badge/cocos%20Creator-%5E2.3.x-brightgreen)
+![](https://img.shields.io/github/last-commit/ifengzp/cocos-awesome)
+![](https://img.shields.io/github/commit-activity/m/ifengzp/cocos-awesome)
+
+cocos是一款挺棒的游戏引擎，我在这个仓库实现一些游戏当中比较使用的功能模块，对应的一个功能一个场景，用的引擎版本是`v2.3.0`，理论上兼容到`v2.3.x`以上，实现的思路在`doc`目录中。
 
 # 目前已实现效果
 
