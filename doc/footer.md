@@ -1,5 +1,6 @@
 我是异名，你的阅读是我的动力，其他文章链接：
 
+- [马赛克效果(shader)](https://mp.weixin.qq.com/s/91V_NNdQXMJ6Z794imlHPA)
 - [融球效果(shader)](https://mp.weixin.qq.com/s/BiTQLHvxgXbZidJdbDniig)
 - [颜色滤镜(shader)](https://mp.weixin.qq.com/s/cLHyZnOCmjLGek4HPjlOyw)
 - [水波扩散效果(shader)](https://mp.weixin.qq.com/s/wrZx8J8d8hcm2A1Qs9T36A)
