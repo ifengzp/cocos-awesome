@@ -22,8 +22,8 @@ export default class Scratch_ticket extends cc.Component {
   beforeDestroy() {
     this.ticketNode.off(cc.Node.EventType.TOUCH_START, this.touchStartEvent, this);
     this.ticketNode.off(cc.Node.EventType.TOUCH_MOVE, this.touchMoveEvent, this);
-    this.ticketNode.on(cc.Node.EventType.TOUCH_END, this.touchEndEvent, this);
-    this.ticketNode.on(cc.Node.EventType.TOUCH_CANCEL, this.touchEndEvent, this);
+    this.ticketNode.off(cc.Node.EventType.TOUCH_END, this.touchEndEvent, this);
+    this.ticketNode.off(cc.Node.EventType.TOUCH_CANCEL, this.touchEndEvent, this);
   }
 
   touchStartEvent(event) {
