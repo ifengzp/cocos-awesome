@@ -2,25 +2,26 @@ import BackHomeBtn from './BackHomeBtn';
 const { ccclass, property } = cc._decorator;
 const LOAD_SCENE_MIN_SEC: number = 1.2;
 enum sceneList {
-  'Water_spread' = '水波扩散效果（shader）',
-  'Specular_gloss' = '镜面光泽效果（shader）',
-  'Dissolve_color' = '溶解效果（shader）',
-  'Follow_spot' = '追光效果（shader）',
-  'Metaball' = '融球效果（shader）',
-  'Circle_avatar' = '圆形头像（shader）',
-  'Scratch_ticket' = '刮刮卡实现',
-  'Coin_fly_to_wallet' = '金币落袋效果',
-  'Moving_ghost' = '移动残影效果',
   'Magnifying_mirror' = '放大镜效果',
+  'Scratch_ticket' = '刮刮卡实现',
+  'Moving_ghost' = '移动残影效果',
+  'Water_spread' = '水波扩散效果（shader）',
+  'Follow_spot' = '追光效果（shader）',
+  'Mosaic' = '马赛克/像素风（shader）',
+  'Dissolve_color' = '溶解效果（shader）',
   'Typer' = '打字机效果',
+  'Specular_gloss' = '镜面光泽效果（shader）',
+  'Metaball' = '融球效果（shader）',
   'Bullet_Tracking' = '子弹跟踪效果',
+  'SwitchScene__SquaresWire' = '场景切换（Squares Wire）',
+  'Circle_avatar' = '圆形头像（shader）',
+  'Coin_fly_to_wallet' = '金币落袋效果',
   'Infinite_bg_scroll' = '背景无限滚动',
   'Change_clothes' = '换装',
   'Screen_vibrating' = '震屏效果+动画恢复第一帧',
   'Joystick' = '遥控杆',
   'Filter' = '颜色滤镜',
-  'Mosaic' = '马赛克/像素风（shader）',
-  'Photo_gallery' = '渐变过渡的相册（shader）'
+  'Photo_gallery' = '渐变过渡的相册（shader）',
 }
 
 @ccclass
@@ -68,10 +69,7 @@ export default class Home extends cc.Component {
       scrollItem.on(
         cc.Node.EventType.TOUCH_END,
         () => {
-          cc.tween(scrollItem)
-            .to(0.1, { scale: 1.05 })
-            .to(0.1, { scale: 1 })
-            .start();
+          cc.tween(scrollItem).to(0.1, { scale: 1.05 }).to(0.1, { scale: 1 }).start();
           this.loadScene(key);
         },
         this

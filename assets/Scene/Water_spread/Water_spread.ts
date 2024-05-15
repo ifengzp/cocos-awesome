@@ -19,6 +19,7 @@ export default class Water_spread extends cc.Component {
   }
 
   update(dt) {
+    this.material.setProperty('time', dt);
     if (this.waveOffset > 2.0) return;
 
     this.waveOffset += dt;

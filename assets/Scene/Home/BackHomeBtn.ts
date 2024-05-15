@@ -8,6 +8,7 @@ export default class BackHomeBtn extends cc.Component {
     cc.game.addPersistRootNode(this.node);
     BackHomeBtn.instance = this;
     this.toggleActive(false);
+    cc.director.on('setBackBtnVisibility', this.toggleActive.bind(this));
   }
 
   toggleActive(flag: boolean) {

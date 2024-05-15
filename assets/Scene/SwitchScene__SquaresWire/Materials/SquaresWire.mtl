@@ -1,0 +1,31 @@
+{
+  "__type__": "cc.Material",
+  "_name": "SquaresWire",
+  "_objFlags": 0,
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "7b2efda6-cd4d-436b-b504-691ff4a12f8c"
+  },
+  "_techniqueIndex": 0,
+  "_techniqueData": {
+    "0": {
+      "defines": {
+        "USE_TEXTURE": true
+      },
+      "props": {
+        "smoothness": 0.4,
+        "time": 0,
+        "squares": {
+          "__type__": "cc.Vec2",
+          "x": 30,
+          "y": 20
+        },
+        "direction": {
+          "__type__": "cc.Vec2",
+          "x": 1,
+          "y": -0.5
+        }
+      }
+    }
+  }
+}

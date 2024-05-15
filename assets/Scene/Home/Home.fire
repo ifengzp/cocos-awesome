@@ -18,6 +18,9 @@
       },
       {
         "__id__": 48
+      },
+      {
+        "__id__": 54
       }
     ],
     "_active": true,
@@ -189,7 +192,7 @@
       "array": [
         0,
         0,
-        452.93128617926146,
+        769.0305585605815,
         0,
         0,
         0,
@@ -1210,8 +1213,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 168,
-      "height": 90.4
+      "width": 335.99,
+      "height": 63.28
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1222,8 +1225,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -462.767,
-        -88.825,
+        -466.456,
+        -85.319,
         0,
         0,
         0,
@@ -1261,10 +1264,10 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "我是 异名\n用代码实现想法",
-    "_N$string": "我是 异名\n用代码实现想法",
-    "_fontSize": 24,
-    "_lineHeight": 40,
+    "_string": "写作对我来说是一种特殊的行动\n是对”我“的存在的理解，消化和修正的过程",
+    "_N$string": "写作对我来说是一种特殊的行动\n是对”我“的存在的理解，消化和修正的过程",
+    "_fontSize": 18,
+    "_lineHeight": 28,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -1294,8 +1297,8 @@
     "_right": 0,
     "_top": 0,
     "_bottom": 0,
-    "_verticalCenter": -88.825,
-    "_horizontalCenter": -462.767,
+    "_verticalCenter": -85.319,
+    "_horizontalCenter": -466.456,
     "_isAbsLeft": true,
     "_isAbsRight": true,
     "_isAbsTop": true,
@@ -1998,7 +2001,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "back_home_btn",
+    "_name": "BackHomeBtnFreeze",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -2219,5 +2222,83 @@
     },
     "_enabled": true,
     "_id": "f1IGHg+lpP16AlzNEKM60q"
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "SceneTransition",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 1
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 55
+      }
+    ],
+    "_prefab": null,
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 0,
+      "height": 0
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_trs": {
+      "__type__": "TypedArray",
+      "ctor": "Float64Array",
+      "array": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "_eulerAngles": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_is3DNode": false,
+    "_groupIndex": 0,
+    "groupIndex": 0,
+    "_id": "eeaY/+TfZLz4P/SykmO5T3"
+  },
+  {
+    "__type__": "1cd9dHF3nRI24w/zAzyk3Q3",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 54
+    },
+    "_enabled": true,
+    "time": 0,
+    "materials": [
+      {
+        "__uuid__": "a869ac13-ffed-4334-b5df-1251273f2b07"
+      }
+    ],
+    "_id": "606YRpjk1JGqOLoeXBmJQ3"
   }
 ]
