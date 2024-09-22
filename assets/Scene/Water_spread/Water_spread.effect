@@ -83,7 +83,7 @@ CCProgram fs %{
 
 		// distance小于1，但是我们希望能有多个波峰波谷，所以在sin的内部乘上一个比较大的倍数
 		// sin函数的值在-1到1之间，我们希望偏移值很小，所以输出的时候需要缩小一定的倍数倍
-		float sin_factor = sin(distance * 100.0 + time) * 0.05;
+		float sin_factor = sin(distance * 100.0 + cc_time.x) * 0.05;
 		float discard_factor = clamp(wave_radius - abs(wave_offset - distance), 0.0, 1.0);
 
 		// 计算总的uv的偏移值
