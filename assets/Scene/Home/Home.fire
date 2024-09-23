@@ -192,7 +192,7 @@
       "array": [
         0,
         0,
-        769.0305585605815,
+        452.93128617926146,
         0,
         0,
         0,
@@ -2225,7 +2225,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "SceneTransition",
+    "_name": "ScreenTransition",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -2260,8 +2260,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        0,
-        0,
+        667,
+        375,
         0,
         0,
         0,
@@ -2283,7 +2283,7 @@
     "_is3DNode": false,
     "_groupIndex": 0,
     "groupIndex": 0,
-    "_id": "eeaY/+TfZLz4P/SykmO5T3"
+    "_id": "e5RQj3G6VEhL2bHSWO3bD2"
   },
   {
     "__type__": "1cd9dHF3nRI24w/zAzyk3Q3",
@@ -2296,9 +2296,30 @@
     "time": 0,
     "materials": [
       {
+        "__uuid__": "94d8d991-9e84-4d88-89f7-33d14f1bc9bf"
+      },
+      {
+        "__uuid__": "c27b1317-6f94-4d6c-9760-adee279b2ad4"
+      },
+      {
+        "__uuid__": "acd92272-4481-49c6-81ef-5ae28e699ecf"
+      },
+      {
+        "__uuid__": "dbf06bcd-8024-4f08-a535-08f7383edf00"
+      },
+      {
+        "__uuid__": "985a2d90-fd09-4d07-9d94-a50d5af116d9"
+      },
+      {
         "__uuid__": "a869ac13-ffed-4334-b5df-1251273f2b07"
+      },
+      {
+        "__uuid__": "ee73e8c0-5ff0-486a-bcdf-dec85b04755b"
+      },
+      {
+        "__uuid__": "6dd2566a-a5ef-48ff-a3a2-521163be1e1e"
       }
     ],
-    "_id": "606YRpjk1JGqOLoeXBmJQ3"
+    "_id": "e6NgBxPOVL9YQp8rpWon4s"
   }
 ]

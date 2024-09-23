@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.Material",
+  "_name": "strip-lt",
+  "_objFlags": 0,
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "6b233ee2-ef6d-4ee5-9b24-999badfcff68"
+  },
+  "_techniqueIndex": 0,
+  "_techniqueData": {
+    "0": {
+      "props": {
+        "direction": {
+          "__type__": "cc.Vec2",
+          "x": -1,
+          "y": 1
+        }
+      },
+      "defines": {}
+    }
+  }
+}

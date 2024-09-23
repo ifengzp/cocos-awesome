@@ -1,0 +1,140 @@
+// Copyright (c) 2017-2018 Xiamen Yaji Software Co., Ltd.
+
+CCEffect %{
+  techniques:
+  - passes:
+    - vert: vs
+      frag: fs
+      blendState:
+        targets:
+        - blend: true
+      rasterizerState:
+        cullMode: none
+      properties:
+        texture: { value: white }
+        texture2: { value: white }
+        time: { value: 0 }
+        direction: { value: [1, 1]}
+}%
+
+CCProgram transition %{
+
+// https://www.shadertoy.com/view/ls3cDB
+
+const float PI = 3.141592653589793;
+const float PI_2 = 3.141592653589793;
+
+#define radius .1
+
+uniform Transition {
+  vec2 direction; // = [1, 1]
+};
+
+float aspect = 1.;//screenSize.x / screenSize.y;
+
+vec4 iMouse = vec4(
+  screenSize.x * (mod((1.0 + time * direction.x), 1.0) + 0.2 * sign(direction.x)),
+  screenSize.y * (mod((1.0 + time * direction.y), 1.0) + 0.2 * sign(direction.y)),
+  screenSize.x * (1.0 - step(0.0, direction.x)),
+  screenSize.y * (1.0 - step(0.0, direction.y))
+);
+
+
+vec2 mouse = iMouse.xy  * vec2(aspect, 1.) / screenSize.xy;
+vec2 mouseDir = normalize(abs(iMouse.zw) - iMouse.xy);
+
+vec4 transition(vec2 uv) {
+  // vec2 uv = fragCoord * vec2(aspect, 1.) / screenSize.xy;
+
+  float dist = dot(uv - mouse, mouseDir);
+  vec2 linePoint = uv - dist * mouseDir;
+
+  vec4 fragColor = vec4(1.0);
+  if (dist > radius)  {
+    fragColor = texture(texture2, uv);
+    // add shadow
+    // fragColor.rgb *= pow(clamp(dist - radius, 0., 1.) * 1.5, .2);
+  }
+  else if (dist >= 0.) {
+    // map to cylinder point
+    float theta = asin(dist / radius);
+    vec2 p2 = linePoint + mouseDir * (PI - theta) * radius;
+    vec2 p1 = linePoint + mouseDir * theta * radius;
+    uv = (p2.x <= aspect && p2.y <= 1. && p2.x > 0. && p2.y > 0.) ? p2 : p1;
+    fragColor = texture(texture, uv);
+    fragColor.rgb *= pow(clamp((radius - dist) / radius, 0., 1.), .2);
+  }
+  else  {
+    vec2 p = linePoint + mouseDir * (abs(dist) + PI * radius);
+    uv = (p.x <= aspect && p.y <= 1. && p.x > 0. && p.y > 0.) ? p : uv;
+    fragColor = texture(texture, uv);
+  }
+
+  return fragColor;
+}
+
+}%
+
+CCProgram vs %{
+
+precision highp float;
+
+#include <cc-global>
+#include <cc-local>
+
+in vec3 a_position;
+in lowp vec4 a_color;
+
+in mediump vec2 a_uv0;
+out mediump vec2 v_uv0;
+
+out lowp vec4 v_color;
+
+uniform Time {
+  vec2 screenSize;
+  float time;
+};
+
+void main() {
+  mat4 mvp;
+
+  mvp = cc_matViewProj;
+
+  v_uv0 = a_uv0;
+  v_color = a_color;
+
+  gl_Position = mvp * vec4(a_position, 1);
+}
+
+}%
+
+CCProgram fs %{
+
+precision highp float;
+
+uniform sampler2D texture;
+uniform sampler2D texture2;
+in mediump vec2 v_uv0;
+
+uniform Time {
+  vec2 screenSize;
+  float time;
+};
+
+in lowp vec4 v_color;
+
+vec4 getFromColor(vec2 uv) {
+  return texture(texture, uv);
+}
+
+vec4 getToColor(vec2 uv) {
+  return texture(texture2, uv);
+}
+
+#include <transition>
+
+void main () {
+  gl_FragColor = v_color * transition(v_uv0);
+}
+
+}%

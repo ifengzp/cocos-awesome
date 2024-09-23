@@ -25,9 +25,9 @@ export default class SwitchScene extends cc.Component {
     this.node.on(cc.Node.EventType.TOUCH_MOVE, this.onTouchMove, this);
   }
 
-  switchSceneByTransition() {
+  switchSceneByTransition(event, value) {
     cc.director.emit('setBackBtnVisibility', false);
-    cc.director.emit('switchSceneByTransition');
+    cc.director.emit('switchSceneByTransition', value);
   }
 
   playTransitionAnimation() {
@@ -78,7 +78,6 @@ export default class SwitchScene extends cc.Component {
     let newMaterial = cc.MaterialVariant.create(this.material, this.bgSprite);
     newMaterial.setProperty('texture', this.spriteFrame1._texture);
     newMaterial.setProperty('texture2', this.spriteFrame2._texture);
-    newMaterial.setProperty('screenSize', new Float32Array([cc.winSize.width, cc.winSize.height]));
     newMaterial.setProperty('time', 0.25);
 
     this.spriteFrame1._texture.setFlipY(true);

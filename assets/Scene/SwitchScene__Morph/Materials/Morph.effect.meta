@@ -1,0 +1,17 @@
+{
+  "ver": "1.0.25",
+  "uuid": "fde88b10-e301-436f-8d79-5093c0a12f12",
+  "compiledShaders": [
+    {
+      "glsl1": {
+        "vert": "\nprecision highp float;\nuniform mediump mat4 cc_matViewProj;\nuniform mat4 cc_matWorld;\nattribute vec3 a_position;\nattribute vec4 a_color;\nvarying vec4 v_color;\n#if USE_TEXTURE\nattribute vec2 a_uv0;\nvarying vec2 v_uv0;\n#endif\nvoid main () {\n  vec4 pos = vec4(a_position, 1);\n  #if CC_USE_MODEL\n  pos = cc_matViewProj * cc_matWorld * pos;\n  #else\n  pos = cc_matViewProj * pos;\n  #endif\n  #if USE_TEXTURE\n  v_uv0 = a_uv0;\n  #endif\n  v_color = a_color;\n  gl_Position = pos;\n}",
+        "frag": "\nprecision highp float;\nuniform sampler2D texture;\nuniform sampler2D texture2;\nuniform float strength;\nuniform float time;\nfloat progress = time;\nvarying mediump vec2 v_uv0;\nvarying vec4 v_color;\nvec4 getFromColor(vec2 uv) {\n  return texture2D(texture, uv);\n}\nvec4 getToColor(vec2 uv) {\n  return texture2D(texture2, uv);\n}\nvec4 transition(vec2 p) {\n  vec4 ca = getFromColor(p);\n  vec4 cb = getToColor(p);\n  vec2 oa = (((ca.rg + ca.b) * 0.5) * 2.0 - 1.0);\n  vec2 ob = (((cb.rg + cb.b) * 0.5) * 2.0 - 1.0);\n  vec2 oc = mix(oa, ob, 0.5) * strength;\n  float w0 = progress;\n  float w1 = 1.0 - w0;\n  return mix(getFromColor(p + oc * w0), getToColor(p - oc * w1), progress);\n}\nvoid main () {\n    gl_FragColor = v_color * transition(v_uv0);\n}"
+      },
+      "glsl3": {
+        "vert": "\nprecision highp float;\nuniform CCGlobal {\n  highp   vec4 cc_time;\n  mediump vec4 cc_screenSize;\n  mediump vec4 cc_screenScale;\n  mediump vec4 cc_nativeSize;\n  highp   mat4 cc_matView;\n  mediump mat4 cc_matViewInv;\n  mediump mat4 cc_matProj;\n  mediump mat4 cc_matProjInv;\n  mediump mat4 cc_matViewProj;\n  mediump mat4 cc_matViewProjInv;\n  mediump vec4 cc_cameraPos;\n};\nuniform CCLocal {\n  mat4 cc_matWorld;\n  mat4 cc_matWorldIT;\n};\nin vec3 a_position;\nin vec4 a_color;\nout vec4 v_color;\n#if USE_TEXTURE\nin vec2 a_uv0;\nout vec2 v_uv0;\n#endif\nvoid main () {\n  vec4 pos = vec4(a_position, 1);\n  #if CC_USE_MODEL\n  pos = cc_matViewProj * cc_matWorld * pos;\n  #else\n  pos = cc_matViewProj * pos;\n  #endif\n  #if USE_TEXTURE\n  v_uv0 = a_uv0;\n  #endif\n  v_color = a_color;\n  gl_Position = pos;\n}",
+        "frag": "\nprecision highp float;\nuniform sampler2D texture;\nuniform sampler2D texture2;\nuniform Common {\n  float strength;\n  float time;\n};\nfloat progress = time;\nin mediump vec2 v_uv0;\nin vec4 v_color;\nvec4 getFromColor(vec2 uv) {\n  return texture(texture, uv);\n}\nvec4 getToColor(vec2 uv) {\n  return texture(texture2, uv);\n}\nvec4 transition(vec2 p) {\n  vec4 ca = getFromColor(p);\n  vec4 cb = getToColor(p);\n  vec2 oa = (((ca.rg + ca.b) * 0.5) * 2.0 - 1.0);\n  vec2 ob = (((cb.rg + cb.b) * 0.5) * 2.0 - 1.0);\n  vec2 oc = mix(oa, ob, 0.5) * strength;\n  float w0 = progress;\n  float w1 = 1.0 - w0;\n  return mix(getFromColor(p + oc * w0), getToColor(p - oc * w1), progress);\n}\nvoid main () {\n    gl_FragColor = v_color * transition(v_uv0);\n}"
+      }
+    }
+  ],
+  "subMetas": {}
+}

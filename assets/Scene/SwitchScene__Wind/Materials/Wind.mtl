@@ -1,0 +1,17 @@
+{
+  "__type__": "cc.Material",
+  "_name": "Wind",
+  "_objFlags": 0,
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "ab0d97f6-021e-4b1c-8210-a9c2e10155f7"
+  },
+  "_techniqueIndex": 0,
+  "_techniqueData": {
+    "0": {
+      "defines": {
+        "USE_TEXTURE": true
+      }
+    }
+  }
+}

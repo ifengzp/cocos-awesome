@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.Material",
+  "_name": "Perlin",
+  "_objFlags": 0,
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "3715350e-c25d-4afa-a06b-e4b480a6edef"
+  },
+  "_techniqueIndex": 0,
+  "_techniqueData": {
+    "0": {
+      "props": {
+        "seed": 12.9898,
+        "scale": 30,
+        "smoothness": 0.05
+      },
+      "defines": {
+        "USE_TEXTURE": true
+      }
+    }
+  }
+}

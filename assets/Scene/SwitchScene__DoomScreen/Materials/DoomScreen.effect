@@ -1,0 +1,117 @@
+// Copyright (c) 2017-2018 Xiamen Yaji Software Co., Ltd.
+
+CCEffect %{
+  techniques:
+  - passes:
+    - vert: vs
+      frag: fs
+      blendState:
+        targets:
+        - blend: true
+      rasterizerState:
+        cullMode: none
+      properties:
+        bars: { value: 50, editor: { tooltip: "列数" }}
+        amplitude: { value: 2, editor: { tooltip: "速度：0向下移动时没有变化，值越高一些元素移动得更快" }}
+        noise: { value: 0.1, editor: { tooltip: "速度的离散程度：0 = 无噪声，1 = 噪声很大" }}
+        frequency: { value: 0.5, editor: { tooltip: "水平速度变化：值越大，波浪越短" }}
+        dripScale: { value: 0.5, editor: { tooltip: "屏幕两侧条形黏连的程度：0 = 无滴落，1 = 曲线滴落" }}
+        time: { value: 0 }
+}%
+
+
+CCProgram vs %{
+  precision highp float;
+
+  #include <cc-global>
+  #include <cc-local>
+
+  in vec3 a_position;
+  in vec4 a_color;
+  out vec4 v_color;
+
+  in vec2 a_uv0;
+  out vec2 v_uv0;
+
+  void main () {
+    vec4 pos = vec4(a_position, 1);
+
+    pos = cc_matViewProj * pos;
+    v_uv0 = a_uv0;
+    v_color = a_color;
+
+    gl_Position = pos;
+  }
+}%
+
+
+CCProgram fs %{
+  precision highp float;
+  uniform sampler2D texture;
+  uniform sampler2D texture2;
+  uniform DoomScreen {
+    float bars;
+    float amplitude;
+    float noise;
+    float frequency;
+    float dripScale;
+    float time;
+  };
+  float progress = time;
+  in mediump vec2 v_uv0;
+  in vec4 v_color;
+
+  vec4 getFromColor(vec2 uv) {
+    return texture(texture, uv);
+  }
+  vec4 getToColor(vec2 uv) {
+    return texture(texture2, uv);
+  }
+  float rand(int num) {
+    return fract(mod(float(num) * 67123.313, 12.0) * sin(float(num) * 10.3) * cos(float(num)));
+  }
+
+  float wave(int num) {
+    // 根据传入的索引值计算波浪的频率
+    float fn = float(num) * frequency * 0.1 * float(bars);
+    return cos(fn * 0.5) * cos(fn * 0.13) * sin((fn + 10.0) * 0.3) / 2.0 + 0.5;
+  }
+
+  float drip(int num) {
+    // 根据传入的索引值计算滴水效果的幅度
+    return sin(float(num) / float(bars - 1.0) * 3.141592) * dripScale;
+  }
+
+  // 计算条的位置
+  float pos(int num) {
+    // 如果没有噪声，则返回波浪效果；否则使用波浪效果和随机数进行混合
+    return (noise == 0.0 ? wave(num) : mix(wave(num), rand(num), noise)) + (dripScale == 0.0 ? 0.0 : drip(num));
+  }
+
+  vec4 transition(vec2 uv) {
+    // 根据水平位置计算当前条的索引值
+    int bar = int(uv.x * (float(bars)));
+    // 根据当前条的位置计算缩放比例和进度
+    float scale = 1.0 + pos(bar) * amplitude;
+    float phase = progress * scale;
+    // 计算垂直位置的比例
+    float posY = uv.y / vec2(1.0).y;
+    vec2 p;
+    vec4 c;
+    // 根据进度判断使用起始颜色还是目标颜色
+    if (phase + posY < 1.0) {
+      // 根据当前条的位置和进度计算新的垂直位置
+      p = vec2(uv.x, uv.y + mix(0.0, vec2(1.0).y, phase)) / vec2(1.0).xy;
+      // 获取起始颜色
+      c = getFromColor(p);
+    } else {
+      // 获取目标颜色
+      p = uv.xy / vec2(1.0).xy;
+      c = getToColor(p);
+    }
+    return c;
+  }
+  void main () {
+    gl_FragColor = v_color * transition(v_uv0);
+  }
+}%

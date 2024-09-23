@@ -1,0 +1,25 @@
+{
+  "__type__": "cc.Material",
+  "_name": "PolkaDotsCurtain",
+  "_objFlags": 0,
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "b805e327-099f-4cb8-a66b-ebca7c96c0e7"
+  },
+  "_techniqueIndex": 0,
+  "_techniqueData": {
+    "0": {
+      "defines": {
+        "USE_TEXTURE": true
+      },
+      "props": {
+        "center": {
+          "__type__": "cc.Vec2",
+          "x": 0,
+          "y": 1
+        },
+        "dots": 80
+      }
+    }
+  }
+}

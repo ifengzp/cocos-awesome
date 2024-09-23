@@ -1,0 +1,24 @@
+{
+  "__type__": "cc.Material",
+  "_name": "DoomScreen",
+  "_objFlags": 0,
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "6af67cb9-1430-48c0-8704-792a7406fa41"
+  },
+  "_techniqueIndex": 0,
+  "_techniqueData": {
+    "0": {
+      "defines": {},
+      "props": {
+        "bars": 50,
+        "texture": {
+          "__uuid__": "bdc5b1b7-faf4-4186-9895-f5ee7ed31093"
+        },
+        "texture2": {
+          "__uuid__": "c8b7f468-dad7-41d2-892a-13b1e106ec06"
+        }
+      }
+    }
+  }
+}

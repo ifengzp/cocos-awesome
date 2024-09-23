@@ -13,7 +13,6 @@ enum sceneList {
   'Specular_gloss' = '镜面光泽效果（shader）',
   'Metaball' = '融球效果（shader）',
   'Bullet_Tracking' = '子弹跟踪效果',
-  'SwitchScene__SquaresWire' = '场景切换（Squares Wire）',
   'Circle_avatar' = '圆形头像（shader）',
   'Coin_fly_to_wallet' = '金币落袋效果',
   'Infinite_bg_scroll' = '背景无限滚动',
@@ -22,6 +21,14 @@ enum sceneList {
   'Joystick' = '遥控杆',
   'Filter' = '颜色滤镜',
   'Photo_gallery' = '渐变过渡的相册（shader）',
+  'SwitchScene__DoomScreen' = '场景切换效果一',
+  'SwitchScene__GlitchMemories' = '场景切换效果二',
+  'SwitchScene__Morph' = '场景切换效果三',
+  'SwitchScene__Perlin' = '场景切换效果四',
+  'SwitchScene__PolkaDotsCurtain' = '场景切换效果五',
+  'SwitchScene__SquaresWire' = '场景切换效果六',
+  'SwitchScene__Strip' = '场景切换效果七',
+  'SwitchScene__Wind' = '场景切换效果八',
 }
 
 @ccclass

@@ -31,9 +31,10 @@ export default class Transition extends cc.Component {
     cc.director.on('switchSceneByTransition', this.switchSceneByTransition.bind(this));
   }
 
-  switchSceneByTransition() {
-    this.materialIndex = this.materialIndex + 1 > this.materials.length ? 0 : this.materialIndex + 1;
-    this.loadScene('Scene/Home/Home', 'Canvas/Main Camera', 'Canvas/Main Camera');
+  switchSceneByTransition(index) {
+    this.materialIndex = Number(index || 0);
+    this.updateSpriteMaterial();
+    setTimeout(() => this.loadScene('Scene/Home/Home', 'Canvas/Main Camera', 'Canvas/Main Camera'));
   }
 
   init() {
@@ -85,7 +86,8 @@ export default class Transition extends cc.Component {
     let newMaterial = cc.MaterialVariant.create(this.materials[this.materialIndex], this._sprite);
     newMaterial.setProperty('texture', this._texture1);
     newMaterial.setProperty('texture2', this._texture2);
-    newMaterial.setProperty('screenSize', new Float32Array([this._texture2.width, this._texture2.height]));
+    if (this.materialIndex == 6)
+      newMaterial.setProperty('screenSize', new Float32Array([this._texture2.width, this._texture2.height]));
 
     this._sprite.setMaterial(0, newMaterial);
     this._spriteMaterial = newMaterial;

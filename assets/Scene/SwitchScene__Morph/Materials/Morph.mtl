@@ -1,0 +1,17 @@
+{
+  "__type__": "cc.Material",
+  "_name": "Morph",
+  "_objFlags": 0,
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "fde88b10-e301-436f-8d79-5093c0a12f12"
+  },
+  "_techniqueIndex": 0,
+  "_techniqueData": {
+    "0": {
+      "defines": {
+        "USE_TEXTURE": true
+      }
+    }
+  }
+}
