@@ -180,7 +180,7 @@
       "array": [
         0,
         0,
-        452.93128617926146,
+        443.4050067376326,
         0,
         0,
         0,
@@ -284,7 +284,7 @@
     "_id": "29zXboiXFBKoIV4PQ2liTe"
   },
   {
-    "__type__": "de7b0bzLFVNZL9kgmLxYXHO",
+    "__type__": "22731LgD/dJ8YARF90bY3L+",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -295,10 +295,10 @@
       "__id__": 8
     },
     "spriteFrame1": {
-      "__uuid__": "5c7f62b2-44b3-4ef2-b133-825e35b654ec"
+      "__uuid__": "bffa7f0c-2421-4a15-8dd1-eb6165061c96"
     },
     "spriteFrame2": {
-      "__uuid__": "145047e6-73a5-4a19-bd7c-9dee1e5bc19f"
+      "__uuid__": "2165c7f4-7432-4741-8838-cd5ca4d1a33e"
     },
     "bgSprite": {
       "__id__": 10
@@ -306,7 +306,7 @@
     "material": {
       "__uuid__": "94d8d991-9e84-4d88-89f7-33d14f1bc9bf"
     },
-    "_id": "bcrHoyt8lHbpmm6ciYSB5M"
+    "_id": "72/BLB24JD0KqHv/0jfPJP"
   },
   {
     "__type__": "cc.Node",
@@ -674,7 +674,7 @@
       "__id__": 2
     },
     "component": "",
-    "_componentId": "de7b0bzLFVNZL9kgmLxYXHO",
+    "_componentId": "22731LgD/dJ8YARF90bY3L+",
     "handler": "switchSceneByTransition",
     "customEventData": "0"
   },

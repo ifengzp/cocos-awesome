@@ -180,7 +180,7 @@
       "array": [
         0,
         0,
-        452.93128617926146,
+        443.4050067376326,
         0,
         0,
         0,
@@ -295,10 +295,10 @@
       "__id__": 8
     },
     "spriteFrame1": {
-      "__uuid__": "6b5b98b4-55cb-4aae-a6aa-58b7edc91500"
+      "__uuid__": "5fcabad5-7c95-4e6f-99bf-ca13f2d99ad5"
     },
     "spriteFrame2": {
-      "__uuid__": "2bd4baf2-cc8f-4a82-b8bf-c619a9a8d6d1"
+      "__uuid__": "787409d1-3a04-4ca4-8c29-80efb927b43e"
     },
     "bgSprite": {
       "__id__": 10
