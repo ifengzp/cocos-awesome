@@ -2,6 +2,7 @@ import BackHomeBtn from './BackHomeBtn';
 const { ccclass, property } = cc._decorator;
 const LOAD_SCENE_MIN_SEC: number = 1.2;
 enum sceneList {
+  '3D_photo' = '平面图深度视差效果',
   'Magnifying_mirror' = '放大镜效果',
   'Scratch_ticket' = '刮刮卡实现',
   'Moving_ghost' = '移动残影效果',

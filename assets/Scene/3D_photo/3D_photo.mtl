@@ -1,0 +1,25 @@
+{
+  "__type__": "cc.Material",
+  "_name": "3D_photo",
+  "_objFlags": 0,
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "40f87fb8-afd7-4555-bf36-fad4139168d9"
+  },
+  "_techniqueIndex": 0,
+  "_techniqueData": {
+    "0": {
+      "defines": {
+        "USE_TEXTURE": true
+      },
+      "props": {
+        "depthTexture": {
+          "__uuid__": "a2898b71-8c5b-4a8c-9ee7-c8cdd9f4accc"
+        },
+        "spriteTexture": {
+          "__uuid__": "bc149a25-8705-4f68-92ca-6fa74bdb6cc7"
+        }
+      }
+    }
+  }
+}
